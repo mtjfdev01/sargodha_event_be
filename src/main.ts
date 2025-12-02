@@ -4,21 +4,17 @@ import { AppModule } from './app.module';
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
 
+  // ✅ Enable CORS for all origins (safe for admin / internal apps)
   app.enableCors({
-    origin: [
-      'http://localhost:5173', // local Vite
-      'http://localhost:3000',
-      'https://sargodha-event-fe.vercel.app', // ✅ frontend
-      'https://sargodha-event-fe.vercel.app/'
-    ],
-    methods: ['GET', 'POST', 'PATCH', 'PUT', 'DELETE', 'OPTIONS'],
-    allowedHeaders: ['Content-Type', 'Authorization'],
+    origin: true,
     credentials: true,
   });
 
+  // ✅ Railway / Cloud port support
   const port = process.env.PORT || 3000;
   await app.listen(port);
 
-  console.log(`Server running on http://localhost:${port}`);
+  console.log(`✅ Server running on port ${port}`);
 }
+
 bootstrap();
