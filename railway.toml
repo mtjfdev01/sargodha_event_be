@@ -1,0 +1,11 @@
+[build]
+builder = "NIXPACKS"  # or "NODE" depending on your plan/UI, but Nixpacks is common
+
+[phases.setup]
+nixPkgs = ["nodejs_22"]
+
+[phases.build]
+cmds = ["npm install", "npm run build"]
+
+[start]
+cmd = "npm run start:prod"
