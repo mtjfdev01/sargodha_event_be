@@ -9,6 +9,7 @@ async function bootstrap() {
       'http://localhost:5173', // local Vite
       'http://localhost:3000',
       'https://sargodha-event-fe.vercel.app', // ✅ frontend
+      'https://sargodha-event-fe.vercel.app/'
     ],
     methods: ['GET', 'POST', 'PATCH', 'PUT', 'DELETE', 'OPTIONS'],
     allowedHeaders: ['Content-Type', 'Authorization'],
