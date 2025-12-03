@@ -43,7 +43,7 @@ export class DonationsController {
 
 
  // total summary of all machines
-@Get('machines/summary')
+@Get('machines_summary')
 getMachinesSummary() {
   return this.svc.getMachinesSummary();
 }
