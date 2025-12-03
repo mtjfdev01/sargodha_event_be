@@ -166,7 +166,7 @@ async getMachinesSummary() {
     .getRawMany();
 
   let totalCollectedAll = 0;
-  let totalRequiredAll = 0;
+  let totalRequiredAll = 96000000;
 
   const machines = donations.map((item) => {
     const machineName = (item.machine || "").toLowerCase().trim();
@@ -174,7 +174,6 @@ async getMachinesSummary() {
     const required = requiredAmounts[machineName] ?? 0;
 
     totalCollectedAll += collected;
-    totalRequiredAll += required;
 
     return {
       machine: item.machine, // keep original for UI
